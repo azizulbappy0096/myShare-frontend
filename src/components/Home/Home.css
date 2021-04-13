@@ -1,19 +1,4 @@
 .home {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  height: 100vh;
-}
-
-.home__header {
-  padding: 4px 8px;
-}
-
-.home__header img {
-  width: 100px;
-  object-fit: contain;
-}
-
-.home__main {
   display: flex;
   align-items: center;
   justify-content: space-around;

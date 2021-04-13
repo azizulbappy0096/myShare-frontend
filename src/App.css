@@ -1,0 +1,15 @@
+.app {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+  }
+  
+  .app__header {
+    padding: 4px 8px;
+  }
+  
+  .app__header img {
+    width: 100px;
+    object-fit: contain;
+  }
+  

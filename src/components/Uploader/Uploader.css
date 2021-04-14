@@ -5,13 +5,16 @@
 }
 
 .uploader__progress {
-    padding: 4px 12px;
+   
     background-color: var(--body-bg-color);
+}
+
+.uploader__inner {
+    padding: 4px 12px;
 }
 
 .uploader__progressbar {
     height: 4px;
-    width: 100%;
     background: var(--light-blue);
     border-radius: 10px;
     margin-bottom: 12px;

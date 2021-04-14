@@ -101,9 +101,13 @@
   outline: none;
 }
 
-.la-copy {
+.la-copy, .la-clipboard-check {
   font-size: 20px;
   cursor: pointer;
+}
+
+.la-clipboard-check {
+  color: green;
 }
 
 /* banner immage */

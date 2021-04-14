@@ -7,14 +7,16 @@ function App() {
   return (
     <div className="app">
       <section className="app__header">
-        <img src="/image/logo.png" />
+        <a href="/">
+        <img src="/image/logo.png" draggable="false" />
+        </a>
       </section>
       <Router>
         <Switch>
-          <Route path="/file/download/:uuid">
+          <Route path="/file/:uuid">
             <Download />
           </Route>
-          <Route path="/">
+          <Route path="/" exact>
             <Home />
           </Route>
         </Switch>

@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Form.css"
 
-function Form({ show }) {
+function Form({ show, reset }) {
     return (
         <div className={`form ${!show ? "hidden" : ""}`}>
             <h5> Or send via E-mail </h5>
@@ -18,7 +18,7 @@ function Form({ show }) {
                     <button type="submit" style={{marginRight: "8px"}}>
                         Send
                     </button>
-                    <button type="button">
+                    <button type="button" onClick={reset}>
                         Share another file
                     </button>
                 </form>

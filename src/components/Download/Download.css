@@ -42,7 +42,7 @@
     margin-bottom: 12px;
 }
 
-.download__container button {
+.download__container a {
     background: var(--light-blue);
     color: white;
     font-size: 0.75em;

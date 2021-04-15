@@ -8,13 +8,14 @@ import Home from "./components/Home/Home";
 
 function App() {
   return (
+    <Router>
     <div className="app">
       <section className="app__header">
         <a href="/">
         <img src="/image/logo.png" draggable="false" />
         </a>
       </section>
-      <Router>
+      
         <Switch>
           <Route path="/file/:uuid">
             <Download />
@@ -23,8 +24,9 @@ function App() {
             <Home />
           </Route>
         </Switch>
-      </Router>
+      
     </div>
+    </Router>
   );
 }
 

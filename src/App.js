@@ -20,7 +20,7 @@ function App() {
           <Route path="/file/:uuid">
             <Download />
           </Route>
-          <Route path="/" exact>
+          <Route path="/">
             <Home />
           </Route>
         </Switch>

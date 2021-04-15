@@ -27,6 +27,7 @@
   border: none;
   border-bottom: 1px solid var(--border-blue);
   text-align: center;
+  background-color: transparent;
 }
 
 .form__field input:focus {

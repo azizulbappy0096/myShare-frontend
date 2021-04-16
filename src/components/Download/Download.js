@@ -8,7 +8,7 @@ import instance from '../../utils/axios'
 function Download() {
     const { uuid } = useParams()
     const [fileData, setFileData] = useState({})
-    const baseUrl = "https://my-share1.herokuapp.com"
+    const baseUrl = "http://localhost:4000"
     
     useEffect(() => {
         instance.get(`/api/file/${uuid}`).then( res => {

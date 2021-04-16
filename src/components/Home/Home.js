@@ -1,13 +1,12 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import "./Home.css";
 
-// modules
-import axios from "axios";
 
 // components
 import Form from "../Form/Form";
 import Uploader from "../Uploader/Uploader";
 
-import "./Home.css";
+
 import ToastMessage from "../ToastMessage/ToastMessage";
 import instance from "../../utils/axios";
 
@@ -27,6 +26,13 @@ function Home() {
   });
   const copyInput = useRef(null);
   const fileInput = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      fileInput.current.onChange = null
+    }
+  }, [])
+
 
   const handleDrag = (e) => {
     e.preventDefault();
@@ -61,6 +67,7 @@ function Home() {
   };
 
   const handleBrowse = (e) => {
+    e.preventDefault();
     fileInput.current.click();
   };
 
@@ -82,6 +89,7 @@ function Home() {
     // make formdata
     const data = new FormData();
     data.append("shareFile", files[0]);
+    fileInput.current.value = null
     upload(data);
   };
 
@@ -92,12 +100,13 @@ function Home() {
   };
 
   const upload = (data) => {
+    console.log("fileinput", fileInput.current.files)
     const protocol = window.location.protocol;
     const host = window.location.host;
     instance
       .post(`/api/file/upload`, data, {
         headers: {
-          "content-type": "multipart/form-data",
+          "content-type": "multipart/form-data"
         },
         onUploadProgress: (e) => {
           const { loaded, total } = e;
@@ -138,6 +147,7 @@ function Home() {
 
   const reset = (e) => {
     e.preventDefault();
+    console.log("reset")
     setShowDropZone(true);
     setShowProgress(false);
     setIsDragged(false);

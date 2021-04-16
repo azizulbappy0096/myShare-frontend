@@ -39,7 +39,13 @@ function Download() {
       let inMin = Math.floor((gapTime % (1000 * 60 * 60)) / (1000 * 60));
       let inSec = Math.floor((gapTime % (1000 * 60)) / 1000);
 
-      setExpiresIn(`${inHour}:${inMin}:${inSec}`);
+      if(gapTime > 0) {
+        setExpiresIn(`${inHour}:${inMin}:${inSec}`);
+      }else {
+        setExpiresIn(`expired`);
+      }
+
+      
     }, 1000);
   }
 

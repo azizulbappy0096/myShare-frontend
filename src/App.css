@@ -1,7 +1,9 @@
 .app {
     display: grid;
     grid-template-rows: auto 1fr;
+    position: relative;
     height: 100vh;
+    overflow: hidden;
   }
   
   .app__header {
